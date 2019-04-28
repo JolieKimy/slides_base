@@ -74,12 +74,21 @@ section {
     text-align: right;
     z-index: 31;
     color: $body-bg;
-    margin: 2%;
-    font-size: 2rem;
+    margin: 0.5%;
+    font-size: 1rem;
     background-color: initial;
     position: relative;
     right: unset;
     bottom: unset;
+    
+    a {
+      background-color: rgba($light_purple, 50%);
+      padding: 5px;
+      border-radius: 10px;
+    }
+  }
+  pre {
+    width: 98%;
   }
 }
 
