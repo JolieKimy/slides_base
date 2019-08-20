@@ -1,32 +1,40 @@
 
 // Fonts
 // Use any fonts you need !
-//@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 // Variables
 // use variables for your colors
 @import 'variables';
 
+// Functions
+// use functions for your specifities
+@import 'functions';
+
+// Mixins
+// use mixins for your custom styles part
+@import 'mixins';
+
 /* General */
 * {
-  //font-family: 'Montserrat' !important;
+  font-family: 'Raleway', sans-serif;
   text-transform: initial !important;
 }
 
 /* Title */
 .title {
-  color: $purple !important;
+  color: $title_color !important;
   font-size: 2rem;
 }
 
 /* Background */
 body {
-  background-color: $light_purple;
+  background-color: $background_color;
 }
 
 .slide {
-  color: $light_purple;
-  border-radius: 3px !important;
+  color: $slide_font_color;
+  border-radius: 0px !important;
 
   figure {
     height: 65%;
@@ -37,52 +45,60 @@ section {
   height: 90%;
   padding-left: 5% !important;
   padding-right: 5% !important;
-  background-color: $body-bg;
+  background-color: $slide_section_color;
   border-radius: 10px;
 }
 
 /* Labels */
-.author {
-  color: $light_purple !important;
-}
-
-.date {
-  color: $light_purple !important;
+.date, .author {
+  color: $title_labels_color !important;
 }
 
 /* reveal */
 .reveal {
   h1 {
-    color: $purple;
+    color: $h1_color;
     vertical-align: top !important;
     margin-bottom: 5% !important;
     font-size: 1.5em;
+    font-family: 'Raleway', sans-serif !important;
   }
   h2 {
-    color: $purple;
+    color: $h2_color;
     vertical-align: top !important;
     margin-bottom: 5% !important;
     font-size: 1.25em;
+    font-family: 'Raleway', sans-serif !important;
   }
-  .progress, .controls, strong {
-    color: $purple !important;
+  a {
+    color: $href_color !important;
+    @include thin_underline($href_color, $background_color);
+    &:hover {
+      $tmp_color : darken($href_color, 30%);
+      color: $tmp_color !important;
+      @include thin_underline($tmp_color, $background_color);
+    }
+  }
+  .controls, strong {
+    color: $controls_color !important;
   }
   .progress {
+    color: $progressbar_color !important;
     height: 1.5%;
   }
   .slide-number {
     text-align: right;
     z-index: 31;
-    color: $body-bg;
+    color: $slide_section_color;
     margin: 0.5%;
     font-size: 1rem;
     background-color: initial;
     position: relative;
     right: unset;
     bottom: unset;
-    
     a {
-      background-color: rgba($light_purple, 50%);
+      text-decoration: none;
+      background-color: rgba($background_color, 50%);
       padding: 5px;
       border-radius: 10px;
     }
